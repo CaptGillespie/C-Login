@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+        <h1 class="display-4">Login to this Cool Site!&emsp;<span class="link"><a href="/login">Login</a></span></h1>
+        @model LoginUser
+        <form asp-controller="Home" asp-action="Login" method="post">
+        <div class="left">
+            <span class="text danger" asp-validation-for="Email"></span>
+            <label asp-for="Email"></label><br>
+            <input asp-for="Email"><br>
+
+            <span asp-validation-for="Password"></span>
+            <label asp-for="Password"></label><br>
+            <input type="password" asp-for="Password"><br>
+            <br>
+            <input type="Submit" value="Sign up Now!">
+        </div>
+    </form>
+</div>
+
+<style>
+.link{
+    font-size: 20px;
+}
+.left{
+    display: inline-block;
+    height: 500px;
+    width: 450px;
+}
+.right{
+    display: inline-block;
+    height: 500px;
+    width: 450px;
+}
+</style>

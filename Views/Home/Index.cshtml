@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Register to this Cool Site!&emsp;<span class="link"><a href="/login">Login</a></span></h1>
+        <div class="left">
+            @model User
+            <form asp-controller="Home" asp-action="register" method="post">
+            <span asp-validation-for="FirstName"></span>
+            <label asp-for="FirstName"></label><br>
+            <input type="text" asp-for="FirstName"><br>
+
+            <span asp-validation-for="LastName"></span>
+            <label asp-for="LastName"></label><br>
+            <input type="text" asp-for="LastName"><br>
+
+            <span asp-validation-for="Email"></span>
+            <label asp-for="Email"></label><br>
+            <input asp-for="Email"><br>
+            <br>
+            <input type="Submit" value="Sign up Now!">
+        </div>
+        <div class="right">
+            <span asp-validation-for="Password"></span>
+            <label asp-for="Password"></label><br>
+            <input asp-for="Password"><br>
+            <span asp-validation-for="Confirm"></span>
+            <label asp-for="Confirm"></label><br>
+            <input asp-for="Confirm"><br>
+        </div>
+    </form>
+</div>
+
+<style>
+.link{
+    font-size: 20px;
+}
+.h1{
+    display: inline-block;
+}
+.left{
+    display: inline-block;
+    height: 500px;
+    width: 450px;
+}
+.right{
+    display: inline-block;
+    height: 500px;
+    width: 450px;
+    vertical-align: top;
+}
+</style>
